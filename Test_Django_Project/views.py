@@ -9,5 +9,7 @@ def home(request):
 
 def result(request):
     user_text = request.GET['usertext']
+    words = user_text.split()
+    number_of_words = len(words)
     reversed_text = request.GET['usertext'][::-1]
-    return render(request, 'result.html', {'usertext': user_text, 'reversedtext': reversed_text})
+    return render(request, 'result.html', {'usertext': user_text, 'reversedtext': reversed_text, 'number_of_words': number_of_words})
