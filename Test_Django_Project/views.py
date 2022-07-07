@@ -8,4 +8,6 @@ def home(request):
     return render(request, 'home.html')
 
 def result(request):
-    return render(request, 'result.html')
+    user_text = request.GET['usertext']
+    reversed_text = request.GET['usertext'][::-1]
+    return render(request, 'result.html', {'usertext': user_text, 'reversedtext': reversed_text})
